@@ -1,15 +1,16 @@
 function countLetters(str){
 	var letters = {};
 	
-	str.split('').forEach(function(x){
-		if(x!== ' '){
-			if(exists(letters, x)){
-				letters[x]++;
+	for(var i=0; i<str.length; i++){
+		console.log(str[i]);
+		if(str[i]!== ' '){
+			if(exists(letters, str[i])){
+				letters[str[i]].push(i);
 			}else{
-				letters[x] = 1;
+				letters[str[i]] = [i];
 			}
 		}	
-	});
+	};
 	return letters;
 }
 
